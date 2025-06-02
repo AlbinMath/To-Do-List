@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Todo - Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9f5ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: #2d9673;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 10px #10663b;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        h1 {
+            color: #d9f5ec;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d9f5ec;
+            font-weight: bold;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            background-color: #d9f5ec;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        button[type="submit"] {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 15px;
+            background-color: #2cda83;
+            color: #070606;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #92d492;
+        }
+        
+        .cancel-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 15px;
+            background-color: #d9534f;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        
+        .cancel-btn:hover {
+            background-color: #c9302c;
+            color: white;
+        }
+        
+        @media (max-width: 576px) {
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            button[type="submit"], .cancel-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Todo</h1>
+        <form action="/update/<%= todo._id %>" method="POST">
+            <div class="form-group">
+                <label for="task">Task:</label>
+                <input type="text" id="task" name="task" value="<%= todo.name %>" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Update Task</button>
+                <a href="/" class="cancel-btn">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

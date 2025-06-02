@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9f5ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: #2d9673;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 10px #10663b;
+            width: 300px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #d9f5ec;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #d9f5ec;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            background-color: #d9f5ec;
+            box-sizing: border-box;
+        }
+        
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            background-color: #2cda83;
+            color: #070606;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #92d492;
+        }
+        
+        p {
+            color: #d9f5ec;
+            margin-top: 20px;
+        }
+        
+        a {
+            color: #2cda83;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required class="inpt">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required class="inpt">
+            </div>
+            <button type="submit" class="add-btn">Register</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+</body>
+</html>
